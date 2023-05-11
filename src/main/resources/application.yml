@@ -1,0 +1,38 @@
+jwt:
+  secret: '[a-zA-Z0-9._]^+$eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ$'
+  expiration: 1800000000
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ahm.hssin@gmail.com
+    password: tuauplpuskfvakla
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  datasource:
+    password: ''
+    url: jdbc:mysql://localhost:3306/ecommerce
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    generate-ddl : true
+  servlet:
+    multipart:
+      max-file-size: 1000000MB
+      max-request-size: 1000000MB
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
